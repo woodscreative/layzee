@@ -1,6 +1,6 @@
 /**
  * Lazyee
- * A plain js lazy image loader
+ * A vanilla js lazy image loader
  *
  * @see https://github.com/woodscreative/layzee
  */
@@ -11,6 +11,7 @@ var Layzee = {};
 Layzee.config = {
   'isEnabled' : true,
   'imagesEnabled' : true,
+  'customAttribute' : 'data-layzee',
   'classLoading' : 'layzee--is-loading',
   'classComplete' : 'layzee--is-complete'
 };
@@ -29,13 +30,13 @@ Layzee.init = function($config)
   };
   var p = this;
   // Find lazyee elements
-  var els = document.querySelectorAll("[data-layzee]");
+  var els = document.querySelectorAll("["+this.config.customAttribute+"]");
   for (var i=0; i<els.length ;i++)
   {
     // Image element
     var el = els[i];
     // Image src
-    var imageSrc = el.getAttribute("data-layzee");
+    var imageSrc = el.getAttribute(this.config.customAttribute);
     switch (el.tagName.toLowerCase())
     {
       // Handle <other> elements by applying as inline style background image
@@ -122,6 +123,3 @@ Layzee._mergeObjects = function($default, $defined)
 	};
 	return merged;
 };
-Layzee.init({
-  // Initialise with optional config options...
-});

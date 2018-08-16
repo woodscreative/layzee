@@ -1,0 +1,24 @@
+{
+  "name": "layzee-image-loader",
+  "version": "1.0.0",
+  "description": "A vanilla js lazy image loader.",
+  "main": "dist/layzee.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woodscreative/layzee.git"
+  },
+  "keywords": [
+    "lazy",
+    "image",
+    "loader"
+  ],
+  "author": "Paul Woods",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/woodscreative/layzee/issues"
+  },
+  "homepage": "https://github.com/woodscreative/layzee#readme",
+  "dependencies": {
+    "eligrey-classlist-js-polyfill": "*"
+  }
+}
